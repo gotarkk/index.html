@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa de Aniversário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .hearts {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .heart {
+            font-size: 30px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .heart:hover {
+            transform: scale(1.2);
+        }
+        .hidden {
+            display: none;
+        }
+        h1 {
+            color: #ff4081;
+        }
+        p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feliz Aniversário, %s!</h1>
+        <div class="hearts">
+            <div class="heart" onclick="wrongAnswer()">❤️</div>
+            <div class="heart" onclick="wrongAnswer()">❤️</div>
+            <div class="heart" onclick="wrongAnswer()">❤️</div>
+            <div class="heart" onclick="rightAnswer()">❤️</div>
+            <div class="heart" onclick="wrongAnswer()">❤️</div>
+            <div class="heart" onclick="wrongAnswer()">❤️</div>
+        </div>
+        <p id="congratulation" class="hidden">
+            Hoje o dia me corteja com encanto,<br>
+            Não sou rico nem santo, mas você me aparece.<br>
+            E se não é golpe de sorte, é melhor que loteria<br>
+            Por ela me encanto, me leve a um paraíso.<br><br>
+            Seu coração é feito de estrelas,<br>
+            Ilumina cada caminho que toca.<br>
+            E ao seu redor, só há beleza,<br>
+            Como a aurora boreal te invejaria.<br><br>
+            Que seus sonhos sejam infinitos,<br>
+            Como o céu que nunca termina.<br>
+            Que a felicidade te abrace forte,<br>
+            E os anos tragam só alegria.<br><br>
+            Você é única, como o luar sereno,<br>
+            Seu brilho inspira a todos nós, ela é uma deusa.<br>
+            Feliz aniversário, pessoa tão linda,<br>
+            Hoje e sempre, ouça que seu dia é especial.<br><br>
+            Desejo-te amor, paz e ternura,<br>
+            E um futuro que seja só radiante.<br>
+            Pois você merece o mundo inteiro,<br>
+            E uma vida de momentos brilhantes.
+        </p>
+    </div>
+
+    <script>
+        function wrongAnswer() {
+            // Exibe uma mensagem de erro (nada acontece ainda)
+            alert("Ops! Tente novamente!");
+        }
+
+        function rightAnswer() {
+            // Quando o "coração verdadeiro" for clicado, a poesia aparece
+            document.getElementById("congratulation").classList.remove("hidden");
+            document.querySelector(".hearts").classList.add("hidden");
+        }
+    </script>
+</body>
+</html>
